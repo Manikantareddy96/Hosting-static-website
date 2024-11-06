@@ -1,9 +1,6 @@
-resource "aws_s3_bucket" "example_bucket" {
-  bucket = var.bucket_name
-
-  versioning {
-    enabled = true
+resource "aws_s3_bucket_versioning" "example_bucket_versioning" {
+  bucket = "manihosting"  # Ensure you are targeting the correct existing bucket
+  versioning_configuration {
+    status = "Enabled"
   }
-
-  acl = var.acl
 }
