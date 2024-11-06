@@ -1,13 +1,7 @@
-# Create an S3 Bucket
-resource "aws_s3_bucket" "mybucket" {
-  bucket = var.bucketname
-}
-
-# Set Ownership Controls to ensure the bucket owner can manage access
-resource "aws_s3_bucket_ownership_controls" "example" {
-  bucket = aws_s3_bucket.mybucket.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"  # The bucket owner can manage object access
+resource "aws_s3_bucket_versioning" "example_bucket_versioning" {
+  bucket = "nagahosting"  # Ensure you are targeting the correct existing bucket
+  versioning_configuration {
+    status = "Enabled"
   }
 }
 
