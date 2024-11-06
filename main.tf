@@ -1,7 +1,7 @@
 resource "aws_instance" "Mani" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
-  key_name               = var.key_name
+  key_name               = variables.tf
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
   user_data              = base64encode(file("website.sh"))
   tags = {
