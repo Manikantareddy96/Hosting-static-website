@@ -1,6 +1,6 @@
 # outputs.tf
 output "websiteendpoint" {
-  value = aws_s3_bucket.mybucket.website_endpoint
+  value = aws_s3_bucket.nagahosting.website_endpoint
 }
 
 output "public_ip"{
